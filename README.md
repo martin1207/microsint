@@ -1,6 +1,16 @@
-# microsint
+# Microsint
 
-Estimation of **distance** and **relative angle** of vulnerable road users (pedestrians, bicycles, e-scooters) from 360° panoramic images, together with the **CAD** parts of the onboard GNSS enclosure used for field data collection.
+Estimation of **distance** and **relative angle** of vulnerable road users (pedestrians, bicycles, e-scooters) from 360° panoramic images, together with the **CAD** parts of the onboard GNSS and GoPro enclosure used for field data collection.
+
+---
+
+## Installation
+
+```bash
+conda create -n microsint python=3.11
+conda activate microsint
+pip install pandas scikit-learn joblib numpy
+
 
 ---
 
@@ -11,7 +21,7 @@ Two STEP files describe the GNSS acquisition enclosure mounted on the mobile pla
 | Part | File | Preview |
 |---|---|---|
 | GNSS box (cover + components) | [CAD_pieces/gnss_box.step](CAD_pieces/gnss_box.step) | ![gnss_box](CAD_pieces/gnss_box.svg) |
-| Bottom box | [CAD_pieces/bottom_box.step](CAD_pieces/bottom_box.step) | ![bottom_box](CAD_pieces/bottom_box.svg) |
+| Bottom box | [CAD_pieces/bottom_piece.step](CAD_pieces/bottom_piece.step) | ![bottom_piece](CAD_pieces/bottom_piece.svg) |
 
 > `.step` files open in FreeCAD, Fusion 360, OnShape, SolidWorks, etc. The `.svg` previews are rendered from the STEP files with `cadquery`.
 
@@ -23,7 +33,7 @@ Two STEP files describe the GNSS acquisition enclosure mounted on the mobile pla
 .
 ├── CAD_pieces/                    # 3D STEP models of the GNSS enclosure
 ├── Bikes_relative_position/       # Distance/angle estimation — bicycles
-├── Escooter_relatvie_position/    # Distance/angle estimation — e-scooters
+├── Escooter_relative_position/    # Distance/angle estimation — e-scooters
 └── Pedestrian_relative_position/  # Distance/angle estimation — pedestrians
     └── Experiment_FUSE/           # Merged training/test dataset
 ```
@@ -52,36 +62,7 @@ from Bikes_relative_position.bike_distance import get_ang_dist_bike
 angle_deg, dist_mm = get_ang_dist_bike(c_x=1200, c_y=850)
 ```
 
-> ⚠️ The `joblib.load(...)` calls in the scripts point to a local absolute path (`/Users/.../PhD/Position_Estimation/...`). Adjust them before running on another machine.
-
----
-
-## Installation
-
-```bash
-conda create -n microsint python=3.11
-conda activate microsint
-pip install pandas scikit-learn joblib numpy
-# to regenerate the CAD part previews:
-pip install cadquery
-```
-
-## Regenerate CAD previews
-
-```bash
-python - <<'PY'
-import cadquery as cq
-from cadquery import exporters
-for name in ("bottom_box", "gnss_box"):
-    wp = cq.importers.importStep(f"CAD_pieces/{name}.step")
-    exporters.export(wp, f"CAD_pieces/{name}.svg",
-                     opt={"width": 900, "height": 600,
-                          "projectionDir": (0.5, -0.8, 0.6)})
-PY
-```
-
----
 
 ## License
 
-Research use — please contact the author for any reuse.
+Research use — please contact the author [martin.dejaeghere@entpe.fr](mailto:martin.dejaeghere@entpe.fr) for any reuse.
