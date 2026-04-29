@@ -7,7 +7,7 @@ Estimation of **distance** and **relative angle** of vulnerable road users (pede
 ## Installation
 
 ```bash
-conda create -n microsint python=3.11
+conda create -n /Users/martin.dejaeghere/Downloads/top_piece.stepmicrosint python=3.11
 conda activate microsint
 pip install pandas scikit-learn joblib numpy
 ```
@@ -16,15 +16,15 @@ pip install pandas scikit-learn joblib numpy
 
 ## CAD parts
 
-Two STEP files describe the GNSS acquisition enclosure mounted on the mobile platform.
+Two STEP files describe the GNSS / video acquisition enclosure mounted on the mobile platform. These pieces are compatible with Segway-Ninebot F-series (F20–F40), D-series (D18–D38), and Xiaomi models (M365, 1S, Pro, Pro 2, Mi 3, Scooter 4), as well as other brands using a similar Ninebot/Xiaomi-type steering column design (e.g., Navee). 
 
 | Part | File | Preview |
 |---|---|---|
 | GNSS box (cover + components) | [CAD_pieces/gnss_box.step](CAD_pieces/gnss_box.step) | ![gnss_box](CAD_pieces/gnss_box.svg) |
+| Top piece | [CAD_pieces/top_piece.step](CAD_pieces/top_piece.step) | ![top_piece](CAD_pieces/top_piece.svg) |
 | Bottom box | [CAD_pieces/bottom_piece.step](CAD_pieces/bottom_piece.step) | ![bottom_piece](CAD_pieces/bottom_piece.svg) |
 
-> `.step` files open in FreeCAD, Fusion 360, OnShape, SolidWorks, etc. The `.svg` previews are rendered from the STEP files with `cadquery`.
-
+> `.step` files open in FreeCAD, Fusion 360, OnShape, SolidWorks, etc. 
 ---
 
 ## Repository layout
