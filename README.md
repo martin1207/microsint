@@ -16,13 +16,13 @@ pip install pandas scikit-learn joblib numpy
 
 ## CAD parts
 
-Two STEP files describe the GNSS / video acquisition enclosure mounted on the mobile platform. These pieces are compatible with Segway-Ninebot F-series (F20–F40), D-series (D18–D38), and Xiaomi models (M365, 1S, Pro, Pro 2, Mi 3, Scooter 4), as well as other brands using a similar Ninebot/Xiaomi-type steering column design (e.g., Navee). 
+Three STEP files describe the GNSS / video acquisition enclosure mounted on the mobile platform. These pieces are compatible with Segway-Ninebot F-series (F20–F40), D-series (D18–D38), and Xiaomi models (M365, 1S, Pro, Pro 2, Mi 3, Scooter 4), as well as other brands using a similar Ninebot/Xiaomi-type steering column design (e.g., Navee). 
 
 | Part | File | Preview |
 |---|---|---|
 | GNSS box (cover + components) | [CAD_pieces/gnss_box.step](CAD_pieces/gnss_box.step) | ![gnss_box](CAD_pieces/gnss_box.svg) |
 | Top piece | [CAD_pieces/top_piece.step](CAD_pieces/top_piece.step) | ![top_piece](CAD_pieces/top_piece.svg) |
-| Bottom box | [CAD_pieces/bottom_piece.step](CAD_pieces/bottom_piece.step) | ![bottom_piece](CAD_pieces/bottom_piece.svg) |
+| Bottom piece | [CAD_pieces/bottom_piece.step](CAD_pieces/bottom_piece.step) | ![bottom_piece](CAD_pieces/bottom_piece.svg) |
 
 > `.step` files open in FreeCAD, Fusion 360, OnShape, SolidWorks, etc. 
 ---
@@ -31,7 +31,7 @@ Two STEP files describe the GNSS / video acquisition enclosure mounted on the mo
 
 ```
 .
-├── CAD_pieces/                    # 3D STEP models of the GNSS enclosure
+├── CAD_pieces/                    # 3D STEP models of the GNSS / GoPro enclosure
 ├── Bikes_relative_position/       # Distance/angle estimation — bicycles
 ├── Escooter_relative_position/    # Distance/angle estimation — e-scooters
 └── Pedestrian_relative_position/  # Distance/angle estimation — pedestrians
